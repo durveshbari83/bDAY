@@ -95,7 +95,7 @@ blockquote p:not(#kalimat, #teksnim){display:none;}
 #teksgift{color:white;font-family:var(--gaya-font2);font-size:20px;font-weight:700;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);top:45%;left:50%;transform:translate(-50%,-55%) scale(0)}
 .textanimate{animation:textappear .5s ease-out forwards,drop 1s ease-in-out forwards 1.5s}
 @keyframes textappear{from{transform:translate(-50%,-55%) scale(0)}to{transform:translate(-50%,-55%) scale(1.2)}}
-#teksgift, #gift{position:fixed;margin:0;padding:0;}
+#teksgift, #gift{position:fixed;margin:0;padding:0;cursor:pointer;z-index:100;}
 #gift{width:120px;height:100px;top:25%;left:50%;transform:translate(-50%,-35%) scale(0)}
 .animate{animation:appear .5s ease-out forwards,shake-rotate .6s infinite alternate ease-in-out .4s,drop 1s ease-in-out forwards 1.5s}
 @keyframes appear{from{transform:translate(-50%,-30%) scale(0)}to{transform:translate(-50%,-30%) scale(1.5)}}
@@ -343,6 +343,13 @@ function berjatuhan() {
     heart.addEventListener('animationend', () => heart.remove());
     document.body.appendChild(heart);
 }
+
+// Redirect to Greeting Card on clicking gift box or its text
+const redirectToGreetingCard = function() {
+    window.location.href = "/bDAY/greet.html";
+};
+document.getElementById('gift').addEventListener('click', redirectToGreetingCard);
+document.getElementById('teksgift').addEventListener('click', redirectToGreetingCard);
 </script>
 </body>
 </html>
